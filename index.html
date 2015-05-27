@@ -287,14 +287,18 @@
 
                 return;
             }
-            $.getJSON('http://transitcloud-transitcloud.rhcloud.com/cloud/api/beta/?email='+email+'&referrer='+window.location.href +'&callback=?', function(res){
+            $.ajax({
+                url:'http://transitcloud-transitcloud.rhcloud.com/cloud/api/beta/?email='+email+'&referrer='+window.location.href +'&callback=?',
+                
+                complete: function(res){
 
 
                     $('#statBut').html('you have been added!');
                     $('#email').val('');
 
 
-            });
+            }
+        });
         }
 
 
