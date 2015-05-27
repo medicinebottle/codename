@@ -9,7 +9,7 @@ if(!isset($email)){
 }
 else{
 	beta($email, $referrer);
-	echo(json_encode(array("status"=>"success", "reason"=>"user added")));
+	echo($callback."(".json_encode(array("status"=>"success", "reason"=>"user added")).")");
 }
 	
 
